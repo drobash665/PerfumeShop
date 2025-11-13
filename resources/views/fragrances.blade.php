@@ -22,6 +22,10 @@
             <td>{{$fragrance->name}}</td>
             <td>{{$fragrance->price}}</td>
             <td>{{$fragrance->brand->name}}</td>
+            <td>
+                <a href="{{ url('fragrance/destroy/'.$fragrance->id) }}">Удалить</a>
+                <a href="{{ url('fragrance/edit/'.$fragrance->id) }}">Редактировать</a>
+            </td>
         </tr>
     @endforeach
 </table>
