@@ -29,5 +29,7 @@
         </tr>
     @endforeach
 </table>
+{{$fragrances->links()}}
+
 </body>
 </html>

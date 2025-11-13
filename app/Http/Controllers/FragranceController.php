@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 
 class FragranceController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $perpage = $request->perpage ?? 2;
         return view('fragrances', [
-            'fragrances' => Fragrance::all()
+            'fragrances' => Fragrance::paginate($perpage)->withQueryString(),
         ]);
     }
 
