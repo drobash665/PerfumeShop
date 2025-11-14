@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\Fragrance;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class FragranceController extends Controller
 {
@@ -18,6 +19,11 @@ class FragranceController extends Controller
 
     public function create()
     {
+        if (! Gate::allows('create-fragrance')) {
+            return redirect('/error')->with('message',
+                'У вас нет разрешения на создание товара');
+        }
+
         return view('fragrance.create', [
             'fragrances' => Fragrance::all(),
             'brands' => Brand::all()
@@ -70,7 +76,11 @@ class FragranceController extends Controller
 
     public function destroy(string $id)
     {
-        Fragrance::destroy($id);
-        return redirect('/fragrance');
+       if (! Gate::allows('destroy-fragrance', Fragrance::all()->where('id', $id)->first())) {
+           return redirect('/error')->with('message',
+       'У вас нет разрешения на удаление товара номера' .$id);
+       }
+       Fragrance::destroy($id);
+       return redirect('/fragrance');
     }
 }
