@@ -41,6 +41,7 @@ class LoginController extends Controller
             'error' => 'Неверный логин или пароль.',
         ])->onlyInput('email', 'password');
     }
+    //FDWDW
 }
 
 
