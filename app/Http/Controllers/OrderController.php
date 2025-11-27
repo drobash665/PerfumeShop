@@ -11,6 +11,14 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
+    public function index()
+    {
+        // Получаем все заказы
+        $orders = \App\Models\Order::all();
+
+        // Возвращаем представление
+        return view('orders.index', compact('orders'));
+    }
     public function show(string $id)
     {
         // Подсчет общей суммы заказа (дублируем логику из поля amount)
@@ -21,7 +29,7 @@ class OrderController extends Controller
             ->where('orders.id', $id)
             ->first();
 
-        return view('order', [
+        return view('orders.order', [
             'order' => Order::with('fragrances')->find($id),
             'total' => $total
         ]);

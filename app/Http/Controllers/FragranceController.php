@@ -12,21 +12,21 @@ class FragranceController extends Controller
     public function index(Request $request)
     {
         $perpage = $request->perpage ?? 2;
-        return view('fragrances', [
+        return view('fragrances.index', [
             'fragrances' => Fragrance::paginate($perpage)->withQueryString(),
         ]);
     }
 
     public function create()
     {
-        if (! Gate::allows('create-fragrance')) {
-            return redirect('/error')->with('message',
-                'У вас нет разрешения на создание товара');
+        if (!auth()->check() || !auth()->user()->is_admin) {
+            return redirect()->route('error.page')->with('message', 'lalalalal');
         }
 
-        return view('fragrance.create', [
+        return view('fragrances.create', [
             'fragrances' => Fragrance::all(),
-            'brands' => Brand::all()
+            'brands' => Brand::all(),
+            'user' => auth()->user()
         ]);
     }
 
@@ -44,11 +44,11 @@ class FragranceController extends Controller
         $fragrance = new Fragrance($validate);
         $fragrance->save();
 
-        return redirect('/fragrance');
+        return redirect('/fragrances');
     }
     public function edit(string $id)
     {
-        return view('fragrance.edit', [
+        return view('fragrances.edit', [
             'fragrance' => Fragrance::all()->where('id', '=', $id)->first(),
             'brands' => Brand::all()
         ]);
@@ -71,16 +71,16 @@ class FragranceController extends Controller
         $fragrance->gender = $validate['gender'];
         $fragrance->year = $validate['year'];
         $fragrance->save();
-        return redirect('/fragrance');
+        return redirect('/fragrances');
     }
 
     public function destroy(string $id)
     {
-       if (! Gate::allows('destroy-fragrance', Fragrance::all()->where('id', $id)->first())) {
+       if (! Gate::allows('destroy-fragrances', Fragrance::all()->where('id', $id)->first())) {
            return redirect('/error')->with('message',
        'У вас нет разрешения на удаление товара номера' .$id);
        }
        Fragrance::destroy($id);
-       return redirect('/fragrance');
+       return redirect('/fragrances');
     }
 }

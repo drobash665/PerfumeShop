@@ -25,8 +25,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::defaultView('pagination::default');
 
-        Gate::define('destory-fragrance', function (User $user, Fragrance $fragrance) {
-            return $user->is_admin OR $fragrance->price < 1000;
+        Gate::define('destory-fragrances', function (User $user, Fragrance $fragrance) {
+            return $user->is_admin;
         });
     }
 }
