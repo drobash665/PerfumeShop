@@ -111,7 +111,7 @@
                         <img src="{{ asset('images/valenttino.jpeg') }}" alt="Valentino">
                     </div>
                     <h5>Valentino</h5>
-                    <p class="text-muted">15.000 р.</p>
+                    <p class="text-muted">$15.00</p>
                 </div>
             </div>
 
@@ -121,7 +121,7 @@
                         <img src="{{ asset('images/chanel 5.jpg') }}" alt="chanel 5">
                     </div>
                     <h5>Chanel №5</h5>
-                    <p class="text-muted">22.000 р.</p>
+                    <p class="text-muted">$22.00</p>
                 </div>
             </div>
 
@@ -131,7 +131,7 @@
                         <img src="{{ asset('images/miss dior.jpg') }}" alt="miss dior">
                     </div>
                     <h5>Miss Dior</h5>
-                    <p class="text-muted">20.000 р.</p>
+                    <p class="text-muted">$20.00</p>
                 </div>
             </div>
 
@@ -141,7 +141,7 @@
                         <img src="{{ asset('images/coco chanel.jpg') }}" alt="coco chanel">
                     </div>
                     <h5>Coco Chanel Paris</h5>
-                    <p class="text-muted">16.000 р.</p>
+                    <p class="text-muted">$16.00</p>
                 </div>
             </div>
         </div>
@@ -180,7 +180,7 @@
                     <div class="col-4">
                         <div class="product-image" style="height: 200px;">
                             <img src="{{ asset('images/two.jpg') }}" alt="two" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
-                        </div>
+                        </div>git
                     </div>
                 </div>
             </div>

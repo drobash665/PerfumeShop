@@ -13,15 +13,15 @@ class OrderController extends Controller
      */
     public function index()
     {
-        // Получаем все заказы
+
         $orders = \App\Models\Order::all();
 
-        // Возвращаем представление
+
         return view('orders.index', compact('orders'));
     }
     public function show(string $id)
     {
-        // Подсчет общей суммы заказа (дублируем логику из поля amount)
+
         $total = DB::table('orders')
             ->selectRaw('SUM(order_items.unit_price * order_items.quantity) as total')
             ->join('order_items', 'orders.id', '=', 'order_items.order_id')

@@ -61,7 +61,6 @@
 </style>
 <body class="d-flex flex-column h-100">
 <header>
-    <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">PerfumeStore</a>

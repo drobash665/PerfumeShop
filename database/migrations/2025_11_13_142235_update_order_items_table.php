@@ -9,7 +9,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('order_items', function (Blueprint $table) {
-            // Просто изменяем существующий внешний ключ
+
             $table->dropForeign(['fragrance_id']);
             $table->foreign('fragrance_id')
                 ->references('id')
