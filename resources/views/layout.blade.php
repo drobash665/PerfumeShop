@@ -11,19 +11,19 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap');
 
-    /* Применение шрифта */
+
     h1, h2, h3, h4, h5, h6, .navbar-brand, .display-4 {
         font-family: 'Cormorant Upright', serif;
         font-weight: 600;
     }
 
-    /* Основной текст - нормальный */
+
     body, p, .lead, .btn {
         font-family: 'Cormorant Upright', serif;
         font-weight: 400;
     }
 
-    /* Легкий текст */
+
     .text-muted, small {
         font-family: 'Cormorant Upright', serif;
         font-weight: 300;

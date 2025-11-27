@@ -27,7 +27,7 @@
         <form class="d-flex flex-column" style="width: 70%; margin: 0 auto;" method="post" action="{{ url('fragrances') }}">
             @csrf
 
-            {{-- Наименование --}}
+
             <div class="mb-3">
                 <label class="form-label">Наименование</label>
                 <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
@@ -37,7 +37,7 @@
                 @enderror
             </div>
 
-            {{-- Цена --}}
+
             <div class="mb-3">
                 <label class="form-label">Цена</label>
                 <input type="text" name="price" class="form-control @error('price') is-invalid @enderror"
@@ -47,7 +47,7 @@
                 @enderror
             </div>
 
-            {{-- Бренд --}}
+
             <div class="mb-3">
                 <label class="form-label">Бренд</label>
                 <select name="brand_id" class="form-select @error('brand_id') is-invalid @enderror">
@@ -64,7 +64,7 @@
                 @enderror
             </div>
 
-            {{-- Описание --}}
+
             <div class="mb-3">
                 <label class="form-label">Описание</label>
                 <textarea name="description"
@@ -75,7 +75,7 @@
                 @enderror
             </div>
 
-            {{-- Пол --}}
+
             <div class="mb-3">
                 <label class="form-label">Пол</label>
                 <select name="gender" class="form-select @error('gender') is-invalid @enderror">
@@ -89,7 +89,7 @@
                 @enderror
             </div>
 
-            {{-- Год выпуска --}}
+
             <div class="mb-3">
                 <label class="form-label">Год выпуска</label>
                 <input type="date" name="year" class="form-control @error('year') is-invalid @enderror"
@@ -99,7 +99,7 @@
                 @enderror
             </div>
 
-            {{-- Submit --}}
+
             <button type="submit" class="btn-submit">Добавить товар</button>
 
         </form>
