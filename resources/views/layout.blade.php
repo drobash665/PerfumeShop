@@ -12,22 +12,18 @@
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap');
 
 
-    h1, h2, h3, h4, h5, h6, .navbar-brand, .display-4 {
+    h1, h2, h3, h4, h5, h6 {
         font-family: 'Cormorant Upright', serif;
         font-weight: 600;
     }
 
 
-    body, p, .lead, .btn {
+    body, p {
         font-family: 'Cormorant Upright', serif;
         font-weight: 400;
     }
 
 
-    .text-muted, small {
-        font-family: 'Cormorant Upright', serif;
-        font-weight: 300;
-    }
 
     .btn-login {
         text-decoration: none;
@@ -61,7 +57,7 @@
 </style>
 <body class="d-flex flex-column h-100">
 <header>
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
+    <nav class="navbar navbar-expand navbar-light fixed-top bg-white">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">PerfumeStore</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"

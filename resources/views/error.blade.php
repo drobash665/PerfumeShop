@@ -32,6 +32,11 @@
         {{ $message }}
     </div>
     @enderror
+    @error('successDestroy')
+    <div class="alert alert-success" role="alert">
+        {{ $message }}
+    </div>
+    @enderror
 </div>
 </body>
 </html>

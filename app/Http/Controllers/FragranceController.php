@@ -81,6 +81,8 @@ class FragranceController extends Controller
        'У вас нет разрешения на удаление товара номера' .$id);
        }
        Fragrance::destroy($id);
-       return redirect('/fragrances');
+        return redirect('/fragrances')->withErrors([
+            'successDestroy' => 'Вы успешно удалили запись',
+        ]);
     }
 }
